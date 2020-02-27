@@ -1,4 +1,23 @@
 
+function changeValueMark(){
+  var mark = document.getElementsByName('mark');
+
+  for (i = 0; i < mark.length; i ++){
+    if (mark[i].checked)
+    document.getElementById("result").innerHTML = mark[i].value;
+  }
+}
+
+  // for (i = 0; i < mark.length; i ++){
+  //   marks[i].onclick = function(target){
+  //     [].forEach.call(marks, function(mark){
+  //       mark.innerHTML = "X"
+  //     });
+  //     this.innerHTML = "O"
+  //   }
+
+
+
 // var choice = 0;
 
 // function Player_1(choice){

@@ -13,15 +13,36 @@
    <title>Thermostate</title>
 </header><!-- /header -->
   <body id="body">
+    <div class="board" id="board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>  
+    </div>
+    <div class="wining-message">
+      <div data-winning-message-text></div>
+      <button id="restartButton">Restart</span></button>
+    </div>
+  </body>
+
+
+<!--   <body id="body">
     <center><h2>Welcome to TicTacToe</h2></center>
     <center><h2>Place your mark below</h2></center>
 
     <center><h3>Player 1 Choose X or Y</h3></center>
+
     <center>
-    <input type="radio" id="X" name="mark" value="X" id="mark" onclick="changeValue(this)">
+    <input type="radio" id="X" name="mark" value="X" >
     <label for="X">X</label>
-    <input type="radio" id="O" name="mark" value="O" id="mark" onclick="changeValue(this)">
-    <label for="O">O</label>
+    <input type="radio" id="O" name="mark" value="O" >
+    <label for="O">O</label><br>
+    <button type="button" onclick="changeValueMark()">Submit</button>
     </center><br>
 
 <center><table class="fixed" id="board">
@@ -29,26 +50,24 @@
     <col width="40px" />
     <col width="40px" />
   <tr>
-    <th style="text-align:center" onclick="this.innerHTML='X'"></th>
-    <th style="text-align:center" onclick="this.innerHTML='X'"></th>
-    <th style="text-align:center" onclick="this.innerHTML='X'"></th>
+    <th id="cell" style="text-align:center" onclick="this.innerHTML='X'"></th>
+    <th id="cell" style="text-align:center" onclick="this.innerHTML='X'"></th>
+    <th id="cell" style="text-align:center" onclick="this.innerHTML='X'"></th>
   </tr>
   <tr>
-    <td style="text-align:center" onclick="this.innerHTML='X'"></td>
-    <td style="text-align:center" onclick="this.innerHTML='X'"></td>
-    <td style="text-align:center" onclick="this.innerHTML='X'"></td>
+    <td id="cell" style="text-align:center" onclick="this.innerHTML='X'"></td>
+    <td id="cell" style="text-align:center" onclick="this.innerHTML='X'"></td>
+    <td id="cell" style="text-align:center" onclick="this.innerHTML='X'"></td>
   </tr>
   <tr>
-    <td style="text-align:center" onclick="this.innerHTML='X'"></td>
-    <td style="text-align:center" onclick="this.innerHTML='X'"></td>
-    <td style="text-align:center" onclick="this.innerHTML='X'"></td>
-  </tr>
+    <td id="cell" style="text-align:center" onclick="this.innerHTML='X'"></td>
+    <td id="cell" style="text-align:center" onclick="this.innerHTML='X'"></td>
+    <td id="cell" style="text-align:center" onclick="this.innerHTML='X'"></td>
+  </tr> -->
   <tr></center>
     <script src="interface.js" ></script>
   </body>
 </html>
-
-
 
 
 <!-- <!DOCTYPE html>
