@@ -1,3 +1,18 @@
+describe ('Game', function(){
+  var game;
+
+  beforeEach(function(){
+    game = new Game();
+  });
+  it('it return player_1 as true', function(){
+    expect(game.getCurrentTurn()).toEqual(true)
+  })
+})
+
+
+
+
+
 
 // 'use strict';
 // describe ('playersMark', function() {

@@ -1,14 +1,20 @@
 
-// $(document).ready(function(){
-//   var firstload
+// var choice = 0;
 
-//   var player = new Player();
-  
+// function Player_1(choice){
+//   choice = document.getElementById("mark").value || choice;
+//   document.getElementById("grid").this.innerHTML = choice
+// }
 
-// })
+// function
 
+// var Game = function(){
+//   this.board = [];
+// }
 
-
+// Game.prototype.turn = function(){
+//   var count = 0 
+// }
 
 
 
