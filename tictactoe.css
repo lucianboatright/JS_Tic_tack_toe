@@ -76,6 +76,8 @@ body {
 .cell.x::before,
 .cell.x::after {
   content: '';
+  /*# centers cros relative to center of cell with margins */
+  position: absolute;
   width: calc(var(--mark-size) * .15);
   height: var(--mark-size);
   background-color: black;
