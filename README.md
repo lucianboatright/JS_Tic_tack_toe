@@ -9,6 +9,21 @@ Create a version of tick tack toe in Java Script for two players following the s
 High test coverage.
 
 
+
+## planning
+
+player hold array of populated positions 
+if player array includes winning combo then they win 
+
+
+
+planning form from front to back
+- Mark mark on board
+- Take turns (X then Y)
+- Win Logic
+- Draw (when table full)
+- Restart
+
 ## User stories
 As a player 1
 I would like to choose either O's or X's as my mark

@@ -1,3 +1,99 @@
+
+# style.css
+
+/*# selects all itesm before, sets box stylng for board*/
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+/*# sets margin on entire page as all html is in body*/
+body {
+  margin: 0;
+}
+
+:root {
+  --cell-size: 100px;
+  /*sets mark size to be .9 the size of te cell-size*/
+  --mark-size: calc(var(--cell-size) * .9); 
+}
+/*element that wraps all cells */
+.board {
+  /*sets vheight and vwidth*/
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  /*sets board to center of page*/
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+
+/*sets cell body */
+.cell {
+  /*sets size of each cell in body*/
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/*removes boarder from the board*/
+/*first child is first/top three cells*/
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+  border-top: none 
+}
+
+/*takes cells 3n +1 = 4n ie 4th cell*/
+/*removes boarder from left of cell*/
+.cell:nth-child(3n + 1) {
+  border-left: none; 
+}
+
+/*right three cells*/
+/*removes boarder from right of cell*/
+
+.cell:nth-child(3n + 3) {
+  border-right: none; 
+}
+
+/*bottom three cells*/
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7){
+  border-bottom: none 
+}
+
+
+/*create pheudo-element to act before and after each time called */
+.cell.x::before,
+.cell.x::after {
+  content: '';
+  width: calc(var(--mark-size) * .15);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.cell.x::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
 table, td, th {
   border: 1px solid black;
 }
