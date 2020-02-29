@@ -41,14 +41,17 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
+
+
 
 /*removes boarder from the board*/
 /*first child is first/top three cells*/
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3){
-  border-top: none 
+  border-top: none; 
 }
 
 /*takes cells 3n +1 = 4n ie 4th cell*/
@@ -71,49 +74,85 @@ body {
   border-bottom: none 
 }
 
+.cell.x,
+.cell.circle{
+  cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+  background-color: black;
+}
+
+
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: lightgrey;
+}
 
 /*create pheudo-element to act before and after each time called */
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
   content: '';
   /*# centers cros relative to center of cell with margins */
   position: absolute;
   width: calc(var(--mark-size) * .15);
   height: var(--mark-size);
-  background-color: black;
 }
 
-.cell.x::before {
+
+/*.cell and .board are seperate emelemts*/
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
   transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
 
 
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
   content: '';
-  /*# centers cros relative to center of cell with margins */
   position: absolute;
   border-radius: 50%;
 }
 
-.cell.circle::before {
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
   width: var(--mark-size);
   height: var(--mark-size);
-  background:  black;
 }
 
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
   width: calc(var(--mark-size)* .7);
   height: calc(var(--mark-size)* .7);
-  background:  white;
+  background-color:  white;
 }
 
 
-
+/*sets background color rgba ,0,0,0 = black .9 = transparancy*/
+.winning-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0,0,0,.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 table, td, th {
