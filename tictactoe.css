@@ -143,6 +143,7 @@ body {
 
 /*sets background color rgba ,0,0,0 = black .9 = transparancy*/
 .winning-message {
+  display: none
   position: fixed;
   top: 0;
   left: 0;
@@ -152,18 +153,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /*color of text*/
+  color: white;
+/*  font-family: Blippo*/
+  font-size: 5rem;
+  flex-direction: column;
+
 }
 
-
-table, td, th {
+.winning-message button {
+  font-size: 3rem;
+  background-color: white
   border: 1px solid black;
+  padding: .25em .5em;
+  cursor: pointer;
 }
 
-table {
-  border-collapse: collapse;
-  width: 20%;
+.winning-message button:hover {
+  background-color: black;
+  color: white;
+  font-size: 5rem;
+  border-color: white 
 }
 
-th, td {
-  height: 100px;
+.winning-message.show {
+  display: flex;
 }
+
+
+
