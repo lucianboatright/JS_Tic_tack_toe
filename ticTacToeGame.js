@@ -16,6 +16,12 @@ const WINNING_COMBINATIONS = [
 const cellElements = document.querySelectorAll('[data-cell')
 // collects board items
 const board = document.getElementById('board')
+// winning or drawing message
+const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
+// set winningMessage elenent on page to equal message when game complete
+const winningMessageElement = document.getElementById('winningMessage')
+// initiale restart button
+const restartButton = document.getElementById(('restartButton'))
 let circleTurn
 
 // const cellElements = document.querySelectorAll('[data-cell]')
@@ -26,34 +32,51 @@ startGame()
 function startGame(){
   circleTurn = false
   cellElements.forEach(cell => {
+    // when restarting game remove all items form board
+    cell.classList.remove(X_CLASS)
+    cell.classList.remove(CIRCLE_CLASS)
+    cell.removeEventListener('click', handleClick)
     cell.addEventListener('click', handleClick, { once: true })
   })
   // tests forEach cell, handle addEventListener - handleClick once:true == only allow once
   setBoardHoverClass()
+  winningMessageElement.classList.remove('show')
 }
-
-
-
 
 function handleClick(e){
   console.log("clicked")
   // which ever cell clicked on is target
+  //check for mark
   const cell = e.target;
+  // switch turns
   // if its circle turn ? return circle_class otherwise: reutrn xclass
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
   // Place Mark
   placeMark(cell, currentClass)
   if (checkWin(currentClass)) {
     console.log('winner')
+    // sets end game to false when win/draw condititon met
+    endGame(false)
+      // check for draw
+  } else if (isDraw()){
+    endGame(true)
+  } else {
+    // swapping turns
+    swapTurn()
+    setBoardHoverClass()
   }
-  //check for mark
-  // check for draw
-  // switch turns
-  swapTurn()
   //settting hover items on board
   setBoardHoverClass()
 }
 
+function endGame(draw){
+  if (draw) {
+    winningMessageTextElement.innerText = "Draw!"
+  } else {
+    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+  }
+  winningMessageElement.classList.add('show')
+}
 
 // placees currentClass mark on board
 function placeMark(cell, currentClass){
@@ -63,6 +86,15 @@ function placeMark(cell, currentClass){
 // switches turn buy turning circleTurn to opposite
 function swapTurn(){
   circleTurn = !circleTurn;
+}
+
+function isDraw(){
+  // destructure cell into array using[....]
+  return [...cellElements].every(cell => {
+    // test that every cell hae either x or circle elenent inside
+    return cell.classList.contains(X_CLASS) ||
+    cell.classList.contains(CIRCLE_CLASS)
+  })
 }
 
 function setBoardHoverClass(){
@@ -75,6 +107,11 @@ function setBoardHoverClass(){
   }
 
 }
+
+
+// add event on click to restart game
+restartButton.addEventListener('click', startGame)
+
 
 function checkWin(currentClass){
   return WINNING_COMBINATIONS.some(combination => {
