@@ -1,12 +1,12 @@
 
-function changeValueMark(){
-  var mark = document.getElementsByName('mark');
+// function player_1_mark(){
+//   var mark = document.getElementsByName('mark');
 
-  for (i = 0; i < mark.length; i ++){
-    if (mark[i].checked)
-    document.getElementById("result").innerHTML = mark[i].value;
-  }
-}
+//   for (i = 0; i < mark.length; i ++){
+//     if (mark[i].checked)
+//     document.getElementById("result").innerHTML = mark[i].value;
+//   }
+// }
 
   // for (i = 0; i < mark.length; i ++){
   //   marks[i].onclick = function(target){

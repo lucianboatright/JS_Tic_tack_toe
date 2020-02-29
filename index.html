@@ -3,19 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <script src="jquery-3.4.1.js"></script>
-  <script src="src/ticTacToe.js"></script>
   <link rel="stylesheet" href="tictactoe.css">
-  <script src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jStorage.js"></script>
+  <script src="ticTacToeGame.js" defer></script>
+  <!-- <script src="js/jquery.min.js"></script> -->
 </head>
-<header id="themo_text">
+<header id="tictactoe">
    <title>TicTacToe</title>
 </header><!-- /header -->
   <body id="body">
-    <div class="board circle" id="board">
-      <div class="cell x" data-cell></div>
-      <div class="cell circle" data-cell></div>
+    <div class="board" id="board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
@@ -24,12 +22,12 @@
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>  
     </div>
-    <div class="winning-message" id="winning-class">
-      <div data-winning-message-text>You Won!</div>
+    <div class="winning-message" id="winningMessage">
+      <div data-winning-message-text></div>
       <button id="restartButton">Restart</span></button>
     </div>
   </body>
-
+</html>
 
 <!--   <body id="body">
     <center><h2>Welcome to TicTacToe</h2></center>

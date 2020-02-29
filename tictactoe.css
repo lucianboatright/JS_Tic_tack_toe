@@ -1,21 +1,25 @@
 
-# style.css
+
 
 /*# selects all itesm before, sets box stylng for board*/
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
-/*# sets margin on entire page as all html is in body*/
-body {
-  margin: 0;
-}
 
 :root {
   --cell-size: 100px;
   /*sets mark size to be .9 the size of te cell-size*/
   --mark-size: calc(var(--cell-size) * .9); 
 }
+
+
+/*# sets margin on entire page as all html is in body*/
+body {
+  margin: 0;
+}
+
+
 /*element that wraps all cells */
 .board {
   /*sets vheight and vwidth*/
@@ -143,14 +147,13 @@ body {
 
 /*sets background color rgba ,0,0,0 = black .9 = transparancy*/
 .winning-message {
-  display: none
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color:rgba(0,0,0,.9);
-  display: flex;
   justify-content: center;
   align-items: center;
   /*color of text*/
@@ -163,7 +166,7 @@ body {
 
 .winning-message button {
   font-size: 3rem;
-  background-color: white
+  background-color: white;
   border: 1px solid black;
   padding: .25em .5em;
   cursor: pointer;
@@ -172,8 +175,7 @@ body {
 .winning-message button:hover {
   background-color: black;
   color: white;
-  font-size: 5rem;
-  border-color: white 
+  border-color: white; 
 }
 
 .winning-message.show {
