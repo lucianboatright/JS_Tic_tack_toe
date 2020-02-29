@@ -1,7 +1,10 @@
 
 const X_CLASS = 'x'
 const CIRCLE_CLASS = 'circle'
+// selects cells([data-cell]) of page
 const cellElements = document.querySelectorAll('[data-cell')
+// collects board items
+const board = document.getElementById('board')
 let circleTurn
 
 // const cellElements = document.querySelectorAll('[data-cell]')
@@ -26,10 +29,31 @@ function handleClick(e){
   //check for mark
   // check for draw
   // switch turns
+  swapTurn()
+  //settting hover items on board
+  setBoardHoverClass()
 }
 
+
+// placees currentClass mark on board
 function placeMark(cell, currentClass){
   cell.classList.add(currentClass)
+}
+
+// switches turn buy turning circleTurn to opposite
+function swapTurn(){
+  circleTurn = !circleTurn;
+}
+
+function setBoardHoverClass(){
+  board.classList.remove(X_CLASS);
+  board.classList.remove(CIRCLE_CLASS);
+  if (circleTurn){
+    board.classList.add(CIRCLE_CLASS)
+  } else {
+    board.classList.add(X_CLASS)
+  }
+
 }
 
 // function Game(){
